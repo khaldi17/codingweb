@@ -1,0 +1,339 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Coding AI</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/coding.png' %}?v={{ version }}" rel="icon">
+	<style>body{
+		background-color: #f0f0f0;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 100vh;
+		font-family: 'Jost', sans-serif;
+		background-image: url('C:\Users\hp\Documents\coding\static\back.png'); /* Replace with the path to your image */
+		background-size: cover;
+		background-position: center;/* Adjusts the background image size to cover the entire container */
+		display: flex;
+	}
+	
+	.container {
+		max-width: 300px;
+		background: #F8F9FD;
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 249, 251) 100%);
+		border-radius: 40px;
+		padding: 25px 35px;
+		border: 5px solid rgb(255, 255, 255);
+		box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+		margin: 20px;
+		
+	  }
+	  
+	  .heading {
+		text-align: center;
+		font-weight: 900;
+		font-size: 30px;
+		color: rgb(16, 137, 211);
+	  }
+	  
+	  .form {
+		margin-top: 30px;
+	  }
+	  
+	  .form .input {
+		width: 100%;
+		background: white;
+		border: none;
+		padding: 15px 4px;
+		border-radius: 20px;
+		margin-top: 15px;
+		 
+		box-shadow: #0a2948b6 0px 10px 10px -5px;
+		border-inline: 2px solid transparent;
+	  }
+	  
+	  .form .input::-moz-placeholder {
+		color: rgb(170, 170, 170);
+	  }
+	  
+	  .form .input::placeholder {
+		color: rgb(170, 170, 170);
+	  }
+	  
+	  .form .input:focus {
+		outline: none;
+		border-inline: 5px solid #12c8d1;
+	  }
+	  
+	  .form .forgot-password {
+		display: block;
+		margin-top: 10px;
+		margin-left: 10px;
+	  }
+	  
+	  .form .forgot-password a {
+		font-size: 11px;
+		color: #0099ff;
+		text-decoration: none;
+	  }
+	  
+	  .form .login-button {
+		display: block;
+		width: 100%;
+		font-weight: bold;
+		background: linear-gradient(45deg, rgb(211, 36, 16) 0%, rgb(18, 203, 209) 100%);
+		color: white;
+		padding-block: 15px;
+		margin: 20px auto;
+		border-radius: 20px;
+		box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+		border: none;
+		transition: all 0.2s ease-in-out;
+	  }
+	  .form .login-button2 {
+		
+		width: 25%;
+		font-weight: bold;
+		background: linear-gradient(45deg, rgba(211, 36, 16, 0) 0%, rgba(18, 203, 209, 0) 100%);
+		color: rgb(4, 60, 67);
+		padding-block: 15px;
+		margin: 5px auto;
+		border-radius: 20px;
+		
+		border: none;
+		
+	  }
+	  
+	  .form .login-button:hover {
+		transform: scale(1.03);
+		box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+	  }
+	  
+	  .form .login-button:active {
+		transform: scale(0.95);
+		box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+	  }
+	  
+	  .social-account-container {
+		margin-top: 25px;
+	  }
+	  
+	  .social-account-container .title {
+		display: block;
+		text-align: center;
+		font-size: 10px;
+		color: rgb(170, 170, 170);
+	  }
+	  
+	  .social-account-container .social-accounts {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		gap: 15px;
+		margin-top: 5px;
+	  }
+	  
+	  .social-account-container .social-accounts .social-button {
+		background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+		border: 5px solid white;
+		padding: 5px;
+		border-radius: 50%;
+		width: 40px;
+		aspect-ratio: 1;
+		display: grid;
+		place-content: center;
+		box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+		transition: all 0.2s ease-in-out;
+	  }
+	  
+	  .social-account-container .social-accounts .social-button .svg {
+		fill: white;
+		margin: auto;
+	  }
+	  
+	  .social-account-container .social-accounts .social-button:hover {
+		transform: scale(1.2);
+	  }
+	  
+	  .social-account-container .social-accounts .social-button:active {
+		transform: scale(0.9);
+	  }
+	  
+	  .agreement {
+		display: block;
+		text-align: center;
+		margin-top: 15px;
+	  }
+	  
+	  .agreement a {
+		text-decoration: none;
+		color: #0099ff;
+		font-size: 9px;
+	  }
+	#logo {
+		position: absolute;
+		flex: auto;
+		top: 20px; /* Adjust the top position as needed */
+		right: 20px; /* Adjust the right position as needed */
+		width: 300px; /* Adjust the width as needed */
+		height: auto; /* To maintain the aspect ratio */
+	}
+	
+	#logo1 {
+		position: relative;
+		align-self: center;
+		right: -105px;
+		width: 90px; /* Adjust the width as needed */
+		height: auto; /* To maintain the aspect ratio */
+	}
+	.Btn {
+		border: none;
+		border-radius: 50%;
+		width: 45px;
+		height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition-duration: .4s;
+		cursor: pointer;
+		position: relative;
+		background: #f09433;
+		background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+		background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+		background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+		overflow: hidden;
+	  }
+	  .Btn2 {
+		border: none;
+		border-radius: 50%;
+		width: 45px;
+		height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition-duration: .4s;
+		cursor: pointer;
+		position: relative;
+		background: #3333f0;
+		background: -moz-linear-gradient(45deg, #334ff0 0%, #3c8ee6 25%, #2797dc 50%, #2397cc 75%, #187dbc 100%);
+		background: -webkit-linear-gradient(45deg, #33c4f0 0%,#3c56e6 25%,#5427dc 50%,#6423cc 75%,#bc1888 100%);
+		background: linear-gradient(45deg, #333ff0 0%,#3c42e6 25%,#2763dc 50%,#b523cc 75%,#1896bc 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+		overflow: hidden;
+	  }
+	  
+	  .svgIcon {
+		transition-duration: .3s;
+	  }
+	  .svgIcon1 {
+		transition-duration: .3s;
+	  }
+	  
+	  .svgIcon path {
+		fill: white;
+	  }
+	  
+	  .text {
+		position: absolute;
+		color: rgb(255, 255, 255);
+		width: 120px;
+		font-weight: 600;
+		opacity: 0;
+		transition-duration: .4s;
+	  }
+	  
+	  .Btn:hover {
+		width: 110px;
+		transition-duration: .4s;
+		border-radius: 30px;
+	  }
+	  
+	  .Btn:hover .text {
+		opacity: 1;
+		transition-duration: .4s;
+	  }
+	  
+	  .Btn:hover .svgIcon {
+		opacity: 0;
+		transition-duration: .3s;
+	  }
+	  .Btn2:hover {
+		width: 110px;
+		transition-duration: .4s;
+		border-radius: 30px;
+	  }
+	  
+	  .Btn2:hover .text {
+		opacity: 1;
+		transition-duration: .4s;
+	  }
+	  
+	  .Btn2:hover .svgIcon {
+		opacity: 0;
+		transition-duration: .3s;
+	  }
+	  
+	  </style>
+    
+</head>
+<body>
+    
+		
+		<div class="container">
+			{% load static %}
+			{% csrf_token %} 
+		    <img src="{% static 'img/coding.png' %}" alt="Logo" id="logo1">
+			<form  class="form"  method="post">
+				{% csrf_token %}
+			  <input class="input"  type="text" name="username" maxlength="150" autofocus="" required="" id="id_username" placeholder="Username">
+			  
+			  <input class="input" type="email" name="email" maxlength="254" id="id_email" placeholder="E-mail">
+			  
+			  <input class="input" type="password" name="password1" autocomplete="new-password" required="" id="id_password1" placeholder="password">
+			  
+			  <input class="input" type="password" name="password2" autocomplete="new-password" required="" id="id_password2" placeholder="Password confirmation:">
+			  
+				
+			  <input class="login-button" type="submit" value="Sign In">  
+			</form>
+			<span class="agreement"><a href="{% url 'login_view' %}">or login</a></span>
+				
+				 
+			  
+			<div class="social-account-container">
+				<span class="title">تواصل معنا عبر</span>
+				
+				<div class="social-accounts">
+					
+						<button class="Btn2">
+							<svg  xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512" class="svgIcon">
+								<path fill="#fff" d="M224 8C100.3 8 0 108.3 0 232c0 119.4 87.3 218 200 234.6V296H142V232h58v-48c0-63.6 37.8-98.6 95.9-98.6 27.6 0 57.1 5 57.1 5v63h-32.1c-31.6 0-41.5 19.6-41.5 39.7v47.9h70.7l-11.4 64H256v160.6C360.7 440.3 448 341 448 216C448 108.2 347.7 8 224 8z"></path>
+							</svg>
+							<a class="text"   href="https://web.facebook.com/profile.php?id=61553791975099">facebook</a>
+						</button>
+						
+						
+					
+					
+					    <button  class="Btn" >
+							<svg  xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512" class="svgIcon"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg>
+							<a class="text"  href="https://www.instagram.com/coding_ai_club/">coding_ai_club</a>
+						  </button>
+					
+				  
+				</div>
+			  </div>
+			  <span class="agreement"><a href="#">Learn user licence agreement</a></span>
+		  </div>
+
+		</body>
+		</html>
